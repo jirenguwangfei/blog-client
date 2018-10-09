@@ -72,12 +72,13 @@ const router = new Router ({
       component: () => import('@/pages/Detail/template.vue')
     },
     {
-      path: '/edit',
+      path: '/edit/:blogId',
       component: () => import('@/pages/Edit/template.vue')
     },
     {
       path: '/create',
-      component: () => import('@/pages/Create/template.vue')
+      component: () => import('@/pages/Create/template.vue'),
+      meta: { requiresAuth: true }
     },
     {
       path: '/user/:userId',
